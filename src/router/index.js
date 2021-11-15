@@ -4,10 +4,21 @@ import MapEditor from '../views/MapEditor.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
+export const routes = [
   {
+    path: '/',
+    name: 'Home',
+    icon: 'mdi-home',
+    component: MapEditor,
+  }, {
+    path: '/users',
+    name: 'Usuários',
+    icon: 'mdi-account',
+    component: MapEditor,
+  }, {
     path: '/map',
-    name: 'MapEditor',
+    name: 'Editor de Mapa',
+    icon: 'mdi-map-marker-radius',
     component: MapEditor,
   },
 ]

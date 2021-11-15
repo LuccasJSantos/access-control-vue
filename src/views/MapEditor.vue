@@ -5,14 +5,12 @@
 <script>
 export default {
   data() {
-    return {}
+    return {};
   },
-  methods: {
-  }
-}
+  methods: {},
+};
 </script>
 
 <style scoped>
-
 </style>
 
