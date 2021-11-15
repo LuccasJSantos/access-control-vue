@@ -30,7 +30,7 @@
     </v-navigation-drawer>
 
     <v-content>
-      <router-view class="" />
+      <router-view class="pa-2" />
     </v-content>
   </v-app>
 </template>
