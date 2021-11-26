@@ -19,10 +19,12 @@
             </v-list-item-icon>
 
             <v-list-item-content>
-              <v-list-item-title
-                v-text="route.name"
-                class="text-left"
-              ></v-list-item-title>
+              <router-link :to="route.path">
+                <v-list-item-title
+                  v-text="route.name"
+                  class="text-left"
+                ></v-list-item-title>
+              </router-link>
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
@@ -39,7 +41,6 @@
 import { routes } from "./router";
 import UserMenu from "./components/UserMenu";
 
-console.log(routes);
 export default {
   components: {
     UserMenu,
@@ -66,5 +67,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+a {
+  text-decoration: none;
 }
 </style>

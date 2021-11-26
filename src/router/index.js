@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import MapEditor from '../views/MapEditor.vue'
+import Users from '../views/Users.vue'
 
 Vue.use(VueRouter)
 
@@ -14,7 +15,7 @@ export const routes = [
     path: '/users',
     name: 'Usuários',
     icon: 'mdi-account',
-    component: MapEditor,
+    component: Users,
   }, {
     path: '/map',
     name: 'Editor de Mapa',
