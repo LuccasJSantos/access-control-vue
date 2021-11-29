@@ -38,7 +38,7 @@
 
       <v-tab-item value="mobile-tabs-5-3">
         <v-card flat>
-          <v-card-text>asdfasdfasdfasdfasdf</v-card-text>
+          <locate-users></locate-users>
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -46,11 +46,12 @@
 </template>
 
 <script>
-import AddUser from "./AddUser.vue";
+import AddUser from "../components/AddUser.vue";
+import LocateUsers from "../components/LocateUsers.vue";
 
 export default {
   name: "Users",
-  components: { AddUser },
+  components: { AddUser, LocateUsers },
   data() {
     return {
       tab: 0,
