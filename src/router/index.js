@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import MapEditor from '../views/MapEditor.vue'
 import Users from '../views/Users.vue'
+import Locations from '../views/Locations.vue'
 
 Vue.use(VueRouter)
 
@@ -21,7 +22,12 @@ export const routes = [
     name: 'Editor de Mapa',
     icon: 'mdi-map-marker-radius',
     component: MapEditor,
-  },
+  }, {
+    path: '/locations',
+    name: 'Localizações',
+    icon: 'mdi-database-marker',
+    component: Locations
+  } 
 ]
 
 const router = new VueRouter({

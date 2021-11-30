@@ -41,12 +41,20 @@
           <v-card-title>Mapa</v-card-title>
 
           <v-combobox
-            v-model="maps"
-            :items="['Prédio 1 primero andar']"
+            v-model="map"
+            :items="maps"
             label="Visualizando"
             outlined
             dense
-          ></v-combobox>
+          >
+            <template v-slot:item="{ item }">
+              {{ item.name }}
+            </template>
+
+            <template v-slot:selection="data">
+              {{ data.item.name }}
+            </template>
+          </v-combobox>
 
           <v-divider></v-divider>
 
@@ -71,7 +79,17 @@ export default {
   },
   data() {
     return {
-      maps: [],
+      map: null,
+      maps: [
+        {
+          id: "001",
+          name: "Prédio 1º andar",
+        },
+        {
+          id: "002",
+          name: "Prédio 2º andar",
+        },
+      ],
       selectedTool: 1,
     };
   },

@@ -54,7 +54,7 @@ export default {
   components: { AddUser, LocateUsers },
   data() {
     return {
-      tab: 0,
+      tab: "mobile-tabs-5-1",
     };
   },
 };
