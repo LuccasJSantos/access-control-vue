@@ -71,12 +71,63 @@
 
     <v-tooltip bottom v-if="user">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn v-on="on" v-bind="attrs" color="primary" class="mr-6" icon>
+        <v-btn
+          v-on="on"
+          v-bind="attrs"
+          @click.stop="resetDialog = true"
+          color="primary"
+          class="mr-6"
+          icon
+        >
           <v-icon light>mdi-lock-reset</v-icon>
         </v-btn>
       </template>
       <span>Reset de senha</span>
     </v-tooltip>
+
+    <v-dialog v-model="resetDialog" max-width="290">
+      <v-card>
+        <v-card-title class="text-h5"> Reset de senha </v-card-title>
+
+        <v-card-text>
+          Deseja mesmo resetar a senha do usuário
+          <span class="subtitle-2 text-decoration-underline">{{
+            username
+          }}</span
+          >?
+        </v-card-text>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn color="error" text @click="resetDialog = false"> Não </v-btn>
+
+          <v-btn
+            class="success"
+            text
+            @click="resetPassword"
+            :loading="resetPassLoading"
+          >
+            Sim
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+
+    <v-dialog v-model="resetConfirmationDialog" max-width="290">
+      <v-card>
+        <v-card-title class="text-h5"> Reset de senha </v-card-title>
+
+        <v-card-text>
+          <div>Senha resetada com sucesso</div>
+          <div>
+            <v-icon x-large class="mt-3" color="success"
+              >mdi-checkbox-marked-circle-outline</v-icon
+            >
+          </div>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
 
     <v-btn class="success">
       <v-icon left>mdi-content-save</v-icon>
@@ -105,7 +156,25 @@ export default {
       password: this.user ? "12345678" : "",
       showPassword: false,
       roles: [],
+      resetDialog: false,
+      resetPassLoading: false,
+      resetConfirmationDialog: false,
     };
+  },
+  methods: {
+    resetPassword() {
+      this.resetPassLoading = true;
+
+      setTimeout(() => {
+        this.resetPassLoading = false;
+        this.resetDialog = false;
+        this.resetConfirmationDialog = true;
+
+        setTimeout(() => {
+          this.resetConfirmationDialog = false;
+        }, 3000);
+      }, 3000);
+    },
   },
 };
 </script>
