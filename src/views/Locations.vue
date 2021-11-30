@@ -80,12 +80,13 @@
             <v-combobox
               v-model="addingSensor.roles"
               :items="[
+                'Todos',
                 'Aluno Robótica',
                 'Aluno ADS',
                 'Aluno Eletrônica',
+                'Coordenação',
                 'Funcionário',
                 'Professor',
-                'Coordenação',
               ]"
               multiple
               chips
@@ -159,7 +160,7 @@ export default {
           id: "955",
           Mapa: "Prédio 1º andar",
           name: "Laboratório de Eletrônica",
-          RFID: ["001"],
+          RFID: ["110"],
           roles: ["Aluno Eletrônica", "Funcionário", "Professor"],
         },
         {
@@ -176,8 +177,77 @@ export default {
           RFID: ["008", "013"],
           roles: ["Professor", "Coordenação"],
         },
+        {
+          id: "538",
+          Mapa: "Prédio 2º andar",
+          name: "Coordernação",
+          RFID: ["016"],
+          roles: ["Funcionário", "Coordenação"],
+        },
+        {
+          id: "562",
+          Mapa: "Prédio 1º andar",
+          name: "Sala de aula 1",
+          RFID: ["029"],
+          roles: ["Todos"],
+        },
+        {
+          id: "548",
+          Mapa: "Prédio 1º andar",
+          name: "Sala de aula 2",
+          RFID: ["030"],
+          roles: ["Todos"],
+        },
+        {
+          id: "545",
+          Mapa: "Prédio 1º andar",
+          name: "Sala de aula 3",
+          RFID: ["031"],
+          roles: ["Todos"],
+        },
+        {
+          id: "546",
+          Mapa: "Prédio 1º andar",
+          name: "Sala de aula 4",
+          RFID: ["085"],
+          roles: ["Todos"],
+        },
+        {
+          id: "540",
+          Mapa: "Prédio 2º andar",
+          name: "Sala de aula 5",
+          RFID: ["095"],
+          roles: ["Todos"],
+        },
+        {
+          id: "561",
+          Mapa: "Prédio 1º andar",
+          name: "Sala de aula 6",
+          RFID: ["099"],
+          roles: ["Todos"],
+        },
+        {
+          id: "553",
+          Mapa: "Prédio 1º andar",
+          name: "Sala de aula 7",
+          RFID: ["101"],
+          roles: ["Todos"],
+        },
+        {
+          id: "556",
+          Mapa: "Prédio 2º andar",
+          name: "Sala de aula 8",
+          RFID: ["103"],
+          roles: ["Todos"],
+        },
+        {
+          id: "559",
+          Mapa: "Prédio 2º andar",
+          name: "Sala de aula 9",
+          RFID: ["104"],
+          roles: ["Todos"],
+        },
       ],
-      sensors: [],
     };
   },
   methods: {
